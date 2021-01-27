@@ -7,6 +7,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import se.maginteractive.test.exception.SmallAmountException;
 import se.maginteractive.test.model.Account;
 import se.maginteractive.test.model.Transaction;
 import se.maginteractive.test.payload.TransactionProcessorDto;
@@ -14,8 +15,10 @@ import se.maginteractive.test.service.TransactionService;
 
 import java.math.BigDecimal;
 
+import static java.math.BigDecimal.ZERO;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.BDDMockito.then;
@@ -31,21 +34,21 @@ class DepositProcessorTest {
     @InjectMocks
     private DepositProcessor service;
 
+    TransactionProcessorDto transactionProcessorDto;
     private Account account;
 
     @BeforeEach
     void setUp() {
         account = Account.builder().id(1L).balance(BigDecimal.valueOf(1000)).build();
+        transactionProcessorDto = TransactionProcessorDto.builder()
+                .account(account)
+                .amount(BigDecimal.valueOf(300))
+                .build();
     }
 
     @Test
     void apply() {
         //given
-        TransactionProcessorDto transactionProcessorDto = TransactionProcessorDto.builder()
-                .account(account)
-                .amount(BigDecimal.valueOf(300))
-                .build();
-
         given(transactionService.create(any(Transaction.class))).willReturn(new Transaction());
 
         //when
@@ -58,34 +61,20 @@ class DepositProcessorTest {
         assertThat(savedTransaction.getAccount().getBalance()).isEqualByComparingTo(BigDecimal.valueOf(1300));
     }
 
+    @DisplayName("Deposit Small Amount Exception")
+    @Test
+    void deposit_small_amount_exception() {
+        //given
+        transactionProcessorDto.setAmount(ZERO);
 
-//    @DisplayName("Deposit Small Amount Exception")
-//    @Test
-//    void deposit_small_amount_exception() {
-//        //given
-//        Account account = Account.builder()
-//                .id(1L)
-//                .balance(BigDecimal.valueOf(1000))
-//                .build();
-//
-//        Transaction transaction = Transaction.builder()
-//                .account(account)
-//                .amount(BigDecimal.valueOf(0))
-//                .type(DEPOSIT)
-//                .date(ZonedDateTime.now())
-//                .build();
-//
-//        given(accountRepository.findById(anyLong())).willReturn(Optional.of(account));
-//
-//        //when
-//        Exception exception = assertThrows(
-//                SmallAmountException.class,
-//                () -> service.deposit(transaction));
-//
-//        //then
-//        then(accountRepository).should().findById(anyLong());
-//        assertEquals("Amount can not be zero or less!", exception.getMessage());
-//    }
+        //when
+        Exception exception = assertThrows(
+                SmallAmountException.class,
+                () -> service.apply(transactionProcessorDto));
+
+        //then
+        assertEquals("Amount can not be zero or less!", exception.getMessage());
+    }
 
 
     @Test

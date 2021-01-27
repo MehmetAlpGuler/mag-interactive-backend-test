@@ -1,0 +1,155 @@
+2021-01-27 11:33:57.820  INFO 23262 --- [Test worker] s.m.test.TestApplicationTests            : Starting TestApplicationTests using Java 11.0.9.1 on ee-l0015 with PID 23262 (started by alp in /home/alp/Desktop/mag-interactive-backend-test)
+2021-01-27 11:33:57.825  INFO 23262 --- [Test worker] s.m.test.TestApplicationTests            : No active profile set, falling back to default profiles: default
+2021-01-27 11:33:59.013  INFO 23262 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-01-27 11:33:59.073  INFO 23262 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 52 ms. Found 3 JPA repository interfaces.
+2021-01-27 11:33:59.758  INFO 23262 --- [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-01-27 11:34:00.043  INFO 23262 --- [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-01-27 11:34:00.149  INFO 23262 --- [Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-01-27 11:34:00.231  INFO 23262 --- [Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-01-27 11:34:00.417  INFO 23262 --- [Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-01-27 11:34:00.609  INFO 23262 --- [Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-01-27 11:34:01.731  INFO 23262 --- [Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-01-27 11:34:01.744  INFO 23262 --- [Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-01-27 11:34:02.944  WARN 23262 --- [Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-01-27 11:34:03.309  INFO 23262 --- [Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-01-27 11:34:03.929  INFO 23262 --- [Test worker] s.m.test.TestApplicationTests            : Started TestApplicationTests in 6.448 seconds (JVM running for 7.867)
+2021-01-27 11:34:04.909  INFO 23262 --- [Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2021-01-27 11:34:04.909  INFO 23262 --- [Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-01-27 11:34:04.910  INFO 23262 --- [Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2021-01-27 11:34:04.947  INFO 23262 --- [Test worker] s.m.t.c.a.impl.AccountControllerImpl     : AccountControllerImpl create: Create New Product Request
+2021-01-27 11:34:05.028  INFO 23262 --- [Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2021-01-27 11:34:05.029  INFO 23262 --- [Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-01-27 11:34:05.029  INFO 23262 --- [Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2021-01-27 11:34:05.108  INFO 23262 --- [Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2021-01-27 11:34:05.109  INFO 23262 --- [Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-01-27 11:34:05.109  INFO 23262 --- [Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2021-01-27 11:34:05.128  INFO 23262 --- [Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2021-01-27 11:34:05.128  INFO 23262 --- [Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-01-27 11:34:05.128  INFO 23262 --- [Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2021-01-27 11:34:05.193  INFO 23262 --- [Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2021-01-27 11:34:05.193  INFO 23262 --- [Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-01-27 11:34:05.194  INFO 23262 --- [Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2021-01-27 11:34:05.222  INFO 23262 --- [Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2021-01-27 11:34:05.223  INFO 23262 --- [Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-01-27 11:34:05.223  INFO 23262 --- [Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2021-01-27 11:34:05.251  INFO 23262 --- [Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2021-01-27 11:34:05.251  INFO 23262 --- [Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-01-27 11:34:05.252  INFO 23262 --- [Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2021-01-27 11:34:05.288  INFO 23262 --- [Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2021-01-27 11:34:05.288  INFO 23262 --- [Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-01-27 11:34:05.289  INFO 23262 --- [Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2021-01-27 11:34:05.319  INFO 23262 --- [Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2021-01-27 11:34:05.319  INFO 23262 --- [Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-01-27 11:34:05.320  INFO 23262 --- [Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2021-01-27 11:34:05.360  INFO 23262 --- [Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2021-01-27 11:34:05.361  INFO 23262 --- [Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-01-27 11:34:05.365  INFO 23262 --- [Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2021-01-27 11:34:05.403  INFO 23262 --- [Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2021-01-27 11:34:05.404  INFO 23262 --- [Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-01-27 11:34:05.404  INFO 23262 --- [Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2021-01-27 11:34:05.438  INFO 23262 --- [Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2021-01-27 11:34:05.440  INFO 23262 --- [Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-01-27 11:34:05.441  INFO 23262 --- [Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2021-01-27 11:34:05.513  INFO 23262 --- [Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2021-01-27 11:34:05.515  INFO 23262 --- [Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-01-27 11:34:05.517  INFO 23262 --- [Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2021-01-27 11:34:05.596  INFO 23262 --- [Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2021-01-27 11:34:05.596  INFO 23262 --- [Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-01-27 11:34:05.597  INFO 23262 --- [Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2021-01-27 11:34:05.697  INFO 23262 --- [Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [se.maginteractive.test.ContextSmokeTest], using SpringBootContextLoader
+2021-01-27 11:34:05.698  INFO 23262 --- [Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [se.maginteractive.test.ContextSmokeTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2021-01-27 11:34:05.699  INFO 23262 --- [Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [se.maginteractive.test.ContextSmokeTest]: ContextSmokeTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2021-01-27 11:34:05.700  INFO 23262 --- [Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration se.maginteractive.test.TestApplication for test class se.maginteractive.test.ContextSmokeTest
+2021-01-27 11:34:05.714  INFO 23262 --- [Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2021-01-27 11:34:05.714  INFO 23262 --- [Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@630d728d, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@4cd22a49, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@4b03c7ce, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@986e4c1, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@1177666, org.springframework.test.context.support.DirtiesContextTestExecutionListener@5cca846f, org.springframework.test.context.transaction.TransactionalTestExecutionListener@922158f, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@373c5886, org.springframework.test.context.event.EventPublishingTestExecutionListener@da2ac41, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@5c3a866, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@1c544b3c, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@49f9d858, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@51a1b582, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@4939b748, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@778a08f8]
+2021-01-27 11:34:05.791  INFO 23262 --- [Test worker] se.maginteractive.test.ContextSmokeTest  : Starting ContextSmokeTest using Java 11.0.9.1 on ee-l0015 with PID 23262 (started by alp in /home/alp/Desktop/mag-interactive-backend-test)
+2021-01-27 11:34:05.794  INFO 23262 --- [Test worker] se.maginteractive.test.ContextSmokeTest  : No active profile set, falling back to default profiles: default
+2021-01-27 11:34:06.081  INFO 23262 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-01-27 11:34:06.104  INFO 23262 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21 ms. Found 3 JPA repository interfaces.
+2021-01-27 11:34:06.400  INFO 23262 --- [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2021-01-27 11:34:06.411  INFO 23262 --- [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2021-01-27 11:34:06.435  INFO 23262 --- [Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-01-27 11:34:06.442  INFO 23262 --- [Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-01-27 11:34:06.530  INFO 23262 --- [Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-01-27 11:34:06.531  INFO 23262 --- [Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-01-27 11:34:06.855  WARN 23262 --- [Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-01-27 11:34:07.003  INFO 23262 --- [Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-01-27 11:34:07.255  INFO 23262 --- [Test worker] se.maginteractive.test.ContextSmokeTest  : Started ContextSmokeTest in 1.537 seconds (JVM running for 11.193)
+2021-01-27 11:34:07.294  INFO 23262 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-01-27 11:34:07.301  INFO 23262 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-01-27 11:34:07.302  INFO 23262 --- [SpringContextShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2021-01-27 11:34:07.309  INFO 23262 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-01-27 11:34:07.311  INFO 23262 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-01-27 11:34:07.312  INFO 23262 --- [SpringContextShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2021-01-27 11:34:07.354  INFO 23262 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2021-01-27 11:34:07.350  INFO 23262 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-01-27 11:34:07.384  INFO 23262 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2021-01-27 11:34:07.396  INFO 23262 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-01-27 11:38:34.717  INFO 23987 --- [main] se.maginteractive.test.TestApplication   : Starting TestApplication using Java 11.0.9.1 on ee-l0015 with PID 23987 (/home/alp/Desktop/mag-interactive-backend-test/build/classes/java/main started by alp in /home/alp/Desktop/mag-interactive-backend-test)
+2021-01-27 11:38:34.719  INFO 23987 --- [main] se.maginteractive.test.TestApplication   : No active profile set, falling back to default profiles: default
+2021-01-27 11:38:35.270  INFO 23987 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-01-27 11:38:35.311  INFO 23987 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 35 ms. Found 3 JPA repository interfaces.
+2021-01-27 11:38:35.612  INFO 23987 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-01-27 11:38:35.618  INFO 23987 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-01-27 11:38:35.618  INFO 23987 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-01-27 11:38:35.681  INFO 23987 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-01-27 11:38:35.681  INFO 23987 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 928 ms
+2021-01-27 11:38:35.791  INFO 23987 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-01-27 11:38:35.893  INFO 23987 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-01-27 11:38:35.937  INFO 23987 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-01-27 11:38:35.972  INFO 23987 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-01-27 11:38:36.062  INFO 23987 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-01-27 11:38:36.172  INFO 23987 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-01-27 11:38:36.637  INFO 23987 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-01-27 11:38:36.642  INFO 23987 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-01-27 11:38:36.980  WARN 23987 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-01-27 11:38:37.068  INFO 23987 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-01-27 11:38:37.219  WARN 23987 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2021-01-27 11:38:37.220  INFO 23987 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-01-27 11:38:37.223  INFO 23987 --- [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-01-27 11:38:37.223  INFO 23987 --- [main] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2021-01-27 11:38:37.234  INFO 23987 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-01-27 11:38:37.237  INFO 23987 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-01-27 11:38:37.239  INFO 23987 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-01-27 11:38:37.254  INFO 23987 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-01-27 11:38:37.269 ERROR 23987 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2021-01-27 11:39:57.152  INFO 24476 --- [main] se.maginteractive.test.TestApplication   : Starting TestApplication using Java 11.0.9.1 on ee-l0015 with PID 24476 (/home/alp/Desktop/mag-interactive-backend-test/build/classes/java/main started by alp in /home/alp/Desktop/mag-interactive-backend-test)
+2021-01-27 11:39:57.154  INFO 24476 --- [main] se.maginteractive.test.TestApplication   : No active profile set, falling back to default profiles: default
+2021-01-27 11:39:57.707  INFO 24476 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-01-27 11:39:57.759  INFO 24476 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 45 ms. Found 3 JPA repository interfaces.
+2021-01-27 11:39:58.054  INFO 24476 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-01-27 11:39:58.060  INFO 24476 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-01-27 11:39:58.060  INFO 24476 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-01-27 11:39:58.118  INFO 24476 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-01-27 11:39:58.118  INFO 24476 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 934 ms
+2021-01-27 11:39:58.206  INFO 24476 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-01-27 11:39:58.289  INFO 24476 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-01-27 11:39:58.344  INFO 24476 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-01-27 11:39:58.375  INFO 24476 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-01-27 11:39:58.456  INFO 24476 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-01-27 11:39:58.553  INFO 24476 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-01-27 11:39:58.980  INFO 24476 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-01-27 11:39:58.986  INFO 24476 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-01-27 11:39:59.325  WARN 24476 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-01-27 11:39:59.406  INFO 24476 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-01-27 11:39:59.536  INFO 24476 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-01-27 11:39:59.547  INFO 24476 --- [main] se.maginteractive.test.TestApplication   : Started TestApplication in 2.673 seconds (JVM running for 3.158)
+2021-01-27 11:40:04.206  INFO 24476 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-01-27 11:40:04.207  INFO 24476 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-01-27 11:40:04.208  INFO 24476 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-01-27 11:40:04.225  INFO 24476 --- [http-nio-8080-exec-2] s.m.t.c.a.impl.AccountControllerImpl     : AccountControllerImpl create: Create New Product Request

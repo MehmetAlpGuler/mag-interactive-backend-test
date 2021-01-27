@@ -107,7 +107,7 @@ ______
 
 Also has **POSTMAN** script in the project folder.
 
-#####@POST /account/create
+##### @POST /account/create
 
     Body: None
     Response:
@@ -116,7 +116,7 @@ Also has **POSTMAN** script in the project folder.
         "balance": 0
     }
 
-#####@POST /account/deposit
+##### @POST /account/deposit
 
     Body:
     {
@@ -129,7 +129,7 @@ Also has **POSTMAN** script in the project folder.
         "balance": 300.00
     }
 
-#####@POST /account/withdraw
+##### @POST /account/withdraw
 
     Body:
     {
@@ -142,7 +142,7 @@ Also has **POSTMAN** script in the project folder.
         "balance": 600.00
     }
 
-#####@POST /account/listTransactions
+##### @POST /account/listTransactions
 
     Body:
     {
@@ -168,7 +168,7 @@ Also has **POSTMAN** script in the project folder.
         ]
     }
 
-#####@POST /product/create
+##### @POST /product/create
 
     Body:
     {
@@ -186,7 +186,7 @@ Also has **POSTMAN** script in the project folder.
         "count": 200
     }
 
-#####@POST /product/list
+##### @POST /product/list
 
     Body: NONE
     Response:
@@ -201,7 +201,7 @@ Also has **POSTMAN** script in the project folder.
         ]
     }
 
-#####@POST /product/update
+##### @POST /product/update
 
     Body:
     {
@@ -220,7 +220,7 @@ Also has **POSTMAN** script in the project folder.
         "count": 200
     }
 
-#####@POST /product/delete
+##### @POST /product/delete
 
     Body:
     {
@@ -236,7 +236,7 @@ Also has **POSTMAN** script in the project folder.
         "count": 200
     }
 
-#####@POST /store/list
+##### @POST /store/list
 
     Body: NONE
     Response:
@@ -251,7 +251,7 @@ Also has **POSTMAN** script in the project folder.
         ]
     }
 
-#####@POST /store/buy
+##### @POST /store/buy
 
     Body:
     {
@@ -273,7 +273,7 @@ Also has **POSTMAN** script in the project folder.
 
 ### Unsuccessful Endpoint calls
 
-#####@POST /account/deposit
+##### @POST /account/deposit
 
    **When try to send zero or less amount**
 
@@ -308,7 +308,7 @@ Also has **POSTMAN** script in the project folder.
         "path": "/account/deposit"
     }
 
-#####@POST /account/deposit
+##### @POST /account/deposit
   **When you try to withdraw more money than the account has**
 
     Body:
@@ -325,7 +325,7 @@ Also has **POSTMAN** script in the project folder.
         "path": "/account/withdraw"
     }
 
-#####@POST /store/buy
+##### @POST /store/buy
   **When the price of the product tried to buy is more than the one on the account**
 
     Body:

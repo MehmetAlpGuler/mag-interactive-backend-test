@@ -153,3 +153,8 @@ Identify and stop the process that's listening on port 8080 or configure this ap
 2021-01-27 11:40:04.207  INFO 24476 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2021-01-27 11:40:04.208  INFO 24476 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
 2021-01-27 11:40:04.225  INFO 24476 --- [http-nio-8080-exec-2] s.m.t.c.a.impl.AccountControllerImpl     : AccountControllerImpl create: Create New Product Request
+2021-01-27 11:43:49.585  INFO 24476 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-01-27 11:43:49.586  INFO 24476 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-01-27 11:43:49.587  INFO 24476 --- [SpringContextShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2021-01-27 11:43:49.597  INFO 24476 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-01-27 11:43:49.600  INFO 24476 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

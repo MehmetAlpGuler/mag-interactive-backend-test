@@ -17,7 +17,7 @@ _________________________
 
 With this setup the server is started with **./gradlew bootRun**
 
-### Rest Standarts
+### Rest Standards
 
 I take care of Richardson Maturity Model of Level-3 HyperMedia Controls. 
 * Return Http codes.
@@ -44,7 +44,7 @@ I take care of Richardson Maturity Model of Level-3 HyperMedia Controls.
             Header : Location : http://localhost:8080/account/3
 
 
-* Controllers have interface for giving versions. it is also more accurate to give a version to the first implementations.
+* Controllers have an interface for giving versions. it is also more accurate to give a version to the first implementations.
   
         @RestController
         public interface StoreController {
@@ -60,7 +60,7 @@ I take care of Richardson Maturity Model of Level-3 HyperMedia Controls.
 
 * I wrote the endpoints according to pdf document. Also, it could be like the below. So the code could be more clean.
 
-| Request Type  | Request Mapping | Porpuse  |
+| Request Type  | Request Mapping | Goal  |
 | ------------- | ------------- | ------------- |
 | @GET  | /accounts/  | findAll |
 | @GET  | /accounts/{id}  | findById |
@@ -377,7 +377,8 @@ Encapsulated the transaction module
 
 ![](images/test_coverage.png)
 
-I wrote positive and negative tests.
+I wrote positive and negative tests. The project has 49 test.
+
 I should complete exceptions tests, and more.
 
 

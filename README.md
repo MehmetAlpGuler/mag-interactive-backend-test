@@ -384,7 +384,7 @@ Also, I should complete exceptions class tests.
 
 ## Project Shortcomings
  
- * I added a small log mechanism. It is not enough The logback file can be added. So We can log all requests and responses.
+ * I added a small log mechanism. It is not enough the logback file can be added. So We can log all requests and responses.
  * The Spring security can be added.  I didn't add to avoid the complexity.
  * ... 
 

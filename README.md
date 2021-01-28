@@ -375,7 +375,7 @@ Encapsulated the transaction module
 
 ## Test Coverage
 
-![](images/test_coverage.png)
+![](images/testcoverage.png)
 
 I wrote positive and negative tests. The project has 51 test.
 

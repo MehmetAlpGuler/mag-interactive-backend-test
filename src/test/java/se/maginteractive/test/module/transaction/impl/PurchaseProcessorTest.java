@@ -67,7 +67,7 @@ class PurchaseProcessorTest {
         assertThat(product.getCount()).isEqualByComparingTo(199);
     }
 
-    @DisplayName("Purchase Not Enough Stok Exception")
+    @DisplayName("Purchase Not Enough Stock Exception")
     @Test
     void purchase_not_enough_stock_exception() {
         //given

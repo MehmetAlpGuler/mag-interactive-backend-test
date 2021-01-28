@@ -1,21 +1,21 @@
 package se.maginteractive.test.service.impl;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import se.maginteractive.test.exception.ResourceNotFoundException;
 import se.maginteractive.test.model.Product;
 import se.maginteractive.test.repository.ProductRepository;
 import se.maginteractive.test.service.ProductService;
-import se.maginteractive.test.exception.ResourceNotFoundException;
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
+@RequiredArgsConstructor
 public class ProductServiceImpl implements ProductService {
 
-    @Autowired
-    private ProductRepository productRepository;
+    private final ProductRepository productRepository;
 
     @Transactional(readOnly = true)
     @Override

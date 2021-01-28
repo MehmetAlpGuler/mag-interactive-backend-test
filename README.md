@@ -377,9 +377,9 @@ Encapsulated the transaction module
 
 ![](images/test_coverage.png)
 
-I wrote positive and negative tests. The project has 49 test.
+I wrote positive and negative tests. The project has 51 test.
 
-I should complete exceptions tests, and more.
+Also, I should complete exceptions class tests.
 
 
 ## Project Shortcomings

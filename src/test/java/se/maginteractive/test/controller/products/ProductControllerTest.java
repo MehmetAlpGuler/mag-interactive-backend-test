@@ -34,17 +34,17 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 class ProductControllerTest {
 
     @Mock
-    ProductService productService;
+    private ProductService productService;
 
     @Mock
-    ModelMapper modelMapper;
+    private ModelMapper modelMapper;
 
     @InjectMocks
-    ProductControllerImpl controller;
+    private ProductControllerImpl controller;
 
     private static final ObjectMapper om = new ObjectMapper();
 
-    MockMvc mockMvc;
+    private MockMvc mockMvc;
 
     @BeforeEach
     void setUp() {

@@ -1,6 +1,6 @@
 package se.maginteractive.test.service.impl;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import se.maginteractive.test.exception.AccountNotFountException;
@@ -21,19 +21,13 @@ import java.util.Optional;
 import static se.maginteractive.test.enums.TransactionType.PURCHASE;
 
 @Service
+@RequiredArgsConstructor
 public class TransactionServiceImpl implements TransactionService {
 
-    @Autowired
-    private TransactionRepository transactionRepository;
-
-    @Autowired
-    private AccountService accountService;
-
-    @Autowired
-    private ProductService productService;
-
-    @Autowired
-    private TransactionProcessorFactory transactionProcessorFactory;
+    private final TransactionRepository transactionRepository;
+    private final AccountService accountService;
+    private final ProductService productService;
+    private final TransactionProcessorFactory transactionProcessorFactory;
 
     @Transactional(readOnly = true)
     @Override

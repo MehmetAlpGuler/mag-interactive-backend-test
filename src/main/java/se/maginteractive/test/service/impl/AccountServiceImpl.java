@@ -59,7 +59,7 @@ public class AccountServiceImpl implements AccountService {
         return addTransaction(transaction);
     }
 
-    private Account addTransaction(Transaction transaction) {
+    protected Account addTransaction(Transaction transaction) {
         Account account = accountRepository.findById(transaction.getAccount().getId())
                 .orElseThrow(AccountNotFountException::new);
 

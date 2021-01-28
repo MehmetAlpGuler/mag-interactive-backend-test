@@ -34,14 +34,12 @@ class DepositProcessorTest {
     @InjectMocks
     private DepositProcessor service;
 
-    TransactionProcessorDto transactionProcessorDto;
-    private Account account;
+    private TransactionProcessorDto transactionProcessorDto;
 
     @BeforeEach
     void setUp() {
-        account = Account.builder().id(1L).balance(BigDecimal.valueOf(1000)).build();
         transactionProcessorDto = TransactionProcessorDto.builder()
-                .account(account)
+                .account(Account.builder().id(1L).balance(BigDecimal.valueOf(1000)).build())
                 .amount(BigDecimal.valueOf(300))
                 .build();
     }

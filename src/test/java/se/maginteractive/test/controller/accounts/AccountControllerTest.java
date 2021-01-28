@@ -36,20 +36,20 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 class AccountControllerTest {
 
     @Mock
-    AccountService accountService;
+    private AccountService accountService;
 
     @Mock
-    TransactionService transactionService;
+    private TransactionService transactionService;
 
     @Mock
     private ModelMapper modelMapper;
 
     @InjectMocks
-    AccountControllerImpl controller;
+    private AccountControllerImpl controller;
 
     private static final ObjectMapper om = new ObjectMapper();
 
-    MockMvc mockMvc;
+    private MockMvc mockMvc;
 
     @BeforeEach
     void setUp() {

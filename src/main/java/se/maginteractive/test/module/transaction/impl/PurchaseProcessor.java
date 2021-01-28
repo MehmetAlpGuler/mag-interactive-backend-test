@@ -1,6 +1,6 @@
 package se.maginteractive.test.module.transaction.impl;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 import se.maginteractive.test.enums.TransactionType;
@@ -17,10 +17,10 @@ import java.time.ZonedDateTime;
 import static se.maginteractive.test.enums.TransactionType.PURCHASE;
 
 @Component
+@RequiredArgsConstructor
 public class PurchaseProcessor implements TransactionProcessor {
 
-    @Autowired
-    private TransactionService transactionService;
+    private final TransactionService transactionService;
 
     @Transactional
     @Override

@@ -7,6 +7,7 @@ import se.maginteractive.test.exception.SmallAmountException;
 import se.maginteractive.test.model.Product;
 
 import java.math.BigDecimal;
+import java.util.function.IntPredicate;
 import java.util.function.Predicate;
 
 import static java.math.BigDecimal.ZERO;
@@ -41,7 +42,7 @@ public interface TransactionValidator {
         }
     }
 
-    Predicate<Integer> smallCount = a -> (a < 1 );
+    IntPredicate smallCount = a -> (a < 1 );
 
     Predicate<BigDecimal> smallAmount = a -> (ZERO.compareTo(a) > -1);
 

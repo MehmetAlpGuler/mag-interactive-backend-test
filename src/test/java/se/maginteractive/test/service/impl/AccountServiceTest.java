@@ -45,25 +45,6 @@ class AccountServiceTest {
     @InjectMocks
     private AccountServiceImpl service;
 
-    @DisplayName("Account Create")
-    @Test
-    void create() {
-        //given
-        Account account = Account.builder()
-                .id(1L)
-                .balance(ZERO)
-                .build();
-        given(accountRepository.save(any(Account.class))).willReturn(account);
-
-        //when
-        Account savedAccount = service.create();
-
-        //then
-        then(accountRepository).should().save(any(Account.class));
-        assertThat(savedAccount).isNotNull();
-        assertThat(savedAccount.getBalance()).isEqualByComparingTo(ZERO);
-    }
-
     @DisplayName("Account Find By Id")
     @Test
     void findById() {
@@ -95,6 +76,41 @@ class AccountServiceTest {
         //then
         then(accountRepository).should().findById(anyLong());
         assertThat(foundAccount).isNotPresent();
+    }
+
+    @DisplayName("Account Create")
+    @Test
+    void create() {
+        //given
+        Account account = Account.builder()
+                .id(1L)
+                .balance(ZERO)
+                .build();
+        given(accountRepository.save(any(Account.class))).willReturn(account);
+
+        //when
+        Account savedAccount = service.create();
+
+        //then
+        then(accountRepository).should().save(any(Account.class));
+        assertThat(savedAccount).isNotNull();
+        assertThat(savedAccount.getBalance()).isEqualByComparingTo(ZERO);
+    }
+
+    @DisplayName("Product Update")
+    @Test
+    void update() {
+        //given
+        Account account = new Account();
+        given(accountRepository.findById(anyLong())).willReturn(Optional.of(account));
+        given(accountRepository.save(any(Account.class))).willReturn(account);
+
+        //when
+        Account savedProduct = service.update(anyLong(), account);
+
+        //then
+        then(accountRepository).should().save(any(Account.class));
+        assertThat(savedProduct).isNotNull();
     }
 
     @DisplayName("Deposit Success")
@@ -238,5 +254,49 @@ class AccountServiceTest {
 
         //then
         assertEquals("Account not found!", exception.getMessage());
+    }
+
+    @Test
+    void addTransaction() {
+        //given
+        Account account = Account.builder()
+                .id(1L)
+                .balance(BigDecimal.valueOf(1000))
+                .build();
+
+        Transaction transaction = Transaction.builder()
+                .account(account)
+                .amount(BigDecimal.valueOf(100))
+                .type(WITHDRAW)
+                .date(ZonedDateTime.now())
+                .build();
+
+        Transaction transactionResult = Transaction.builder()
+                .account(Account.builder()
+                        .id(1L)
+                        .balance(BigDecimal.valueOf(900))
+                        .build())
+                .amount(BigDecimal.valueOf(100))
+                .type(WITHDRAW)
+                .date(ZonedDateTime.now())
+                .build();
+
+
+        TransactionProcessorDto transactionProcessorDto = TransactionProcessorDto.builder()
+                .account(account)
+                .amount(transaction.getAmount())
+                .build();
+
+        given(accountRepository.findById(anyLong())).willReturn(Optional.of(account));
+        given(transactionProcessorFactory.getTransaction(WITHDRAW)).willReturn(withdrawProcessorBean);
+        given(withdrawProcessorBean.apply(transactionProcessorDto)).willReturn(transactionResult);
+
+        //when
+        Account savedAccount = service.addTransaction(transaction);
+
+        //then
+        then(accountRepository).should().findById(anyLong());
+        assertThat(savedAccount).isNotNull();
+        assertThat(savedAccount.getBalance()).isEqualByComparingTo(BigDecimal.valueOf(900));
     }
 }

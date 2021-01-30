@@ -15,7 +15,7 @@ _________________________
 
 ### Run
 
-With this setup the server is started with **./gradlew bootRun**
+With this application is started with **./gradlew bootRun**
 
 ### Rest Standards
 

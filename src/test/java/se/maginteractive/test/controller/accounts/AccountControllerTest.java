@@ -87,7 +87,7 @@ class AccountControllerTest {
         //given
         AccountDepositRequest accountDepositRequest = AccountDepositRequest.builder().accountId(1L).amount(BigDecimal.valueOf(100L)).build();
         given(accountService.findById(anyLong())).willReturn(Optional.of(new Account()));
-        given(accountService.deposit(any())).willReturn(new Account());
+        given(transactionService.deposit(any())).willReturn(new Account());
 
         //when
         mockMvc.perform(post("/account/deposit")
@@ -96,7 +96,7 @@ class AccountControllerTest {
                 .andExpect(status().isOk());
 
         //then
-        then(accountService).should().deposit(any());
+        then(transactionService).should().deposit(any());
     }
 
     @Test
@@ -104,7 +104,7 @@ class AccountControllerTest {
         //given
         AccountWithdrawRequest accountWithdrawRequest = AccountWithdrawRequest.builder().accountId(1L).amount(BigDecimal.valueOf(100L)).build();
         given(accountService.findById(anyLong())).willReturn(Optional.of(new Account()));
-        given(accountService.withdraw(any())).willReturn(new Account());
+        given(transactionService.withdraw(any())).willReturn(new Account());
 
         //when
         mockMvc.perform(post("/account/withdraw")
@@ -113,7 +113,7 @@ class AccountControllerTest {
                 .andExpect(status().isOk());
 
         //then
-        then(accountService).should().withdraw(any());
+        then(transactionService).should().withdraw(any());
     }
 
     @Test

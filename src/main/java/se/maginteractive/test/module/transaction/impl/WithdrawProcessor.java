@@ -8,7 +8,6 @@ import se.maginteractive.test.model.Account;
 import se.maginteractive.test.model.Transaction;
 import se.maginteractive.test.module.transaction.TransactionProcessor;
 import se.maginteractive.test.payload.TransactionProcessorDto;
-import se.maginteractive.test.service.TransactionService;
 
 import java.math.BigDecimal;
 import java.time.ZonedDateTime;
@@ -18,8 +17,6 @@ import static se.maginteractive.test.enums.TransactionType.WITHDRAW;
 @Component
 @RequiredArgsConstructor
 public class WithdrawProcessor implements TransactionProcessor {
-
-    private final TransactionService transactionService;
 
     @Transactional
     @Override
@@ -34,8 +31,6 @@ public class WithdrawProcessor implements TransactionProcessor {
         transaction.setAmount(transactionProcessorDto.getAmount());
         transaction.setType(getType());
         transaction.setDate(ZonedDateTime.now());
-        transactionService.create(transaction);
-
         return transaction;
     }
 

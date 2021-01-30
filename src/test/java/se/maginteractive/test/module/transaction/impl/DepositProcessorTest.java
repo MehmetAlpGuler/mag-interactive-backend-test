@@ -19,9 +19,6 @@ import static java.math.BigDecimal.ZERO;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.BDDMockito.given;
-import static org.mockito.BDDMockito.then;
 import static se.maginteractive.test.enums.TransactionType.DEPOSIT;
 
 @DisplayName("Deposit Processor Test")
@@ -47,13 +44,11 @@ class DepositProcessorTest {
     @Test
     void apply() {
         //given
-        given(transactionService.create(any(Transaction.class))).willReturn(new Transaction());
 
         //when
         Transaction savedTransaction = service.apply(transactionProcessorDto);
 
         //then
-        then(transactionService).should().create(any(Transaction.class));
         assertThat(savedTransaction).isNotNull();
         assertThat(savedTransaction.getAmount()).isEqualByComparingTo(BigDecimal.valueOf(300));
         assertThat(savedTransaction.getAccount().getBalance()).isEqualByComparingTo(BigDecimal.valueOf(1300));

@@ -1,16 +1,16 @@
 package se.maginteractive.test.module.transaction;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import se.maginteractive.test.enums.TransactionType;
 
 import java.util.List;
 
 @Component
+@RequiredArgsConstructor
 public class TransactionProcessorFactory {
 
-    @Autowired
-    private List<TransactionProcessor> transactions;
+    private final List<TransactionProcessor> transactions;
 
     public TransactionProcessor getTransaction(TransactionType transactionType) {
         return transactions.stream()

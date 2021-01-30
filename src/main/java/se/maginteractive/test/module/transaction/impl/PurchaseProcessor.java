@@ -1,6 +1,5 @@
 package se.maginteractive.test.module.transaction.impl;
 
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 import se.maginteractive.test.enums.TransactionType;
@@ -9,7 +8,6 @@ import se.maginteractive.test.model.Product;
 import se.maginteractive.test.model.Transaction;
 import se.maginteractive.test.module.transaction.TransactionProcessor;
 import se.maginteractive.test.payload.TransactionProcessorDto;
-import se.maginteractive.test.service.TransactionService;
 
 import java.math.BigDecimal;
 import java.time.ZonedDateTime;
@@ -17,10 +15,7 @@ import java.time.ZonedDateTime;
 import static se.maginteractive.test.enums.TransactionType.PURCHASE;
 
 @Component
-@RequiredArgsConstructor
 public class PurchaseProcessor implements TransactionProcessor {
-
-    private final TransactionService transactionService;
 
     @Transactional
     @Override
@@ -44,8 +39,6 @@ public class PurchaseProcessor implements TransactionProcessor {
         transaction.setType(getType());
         transaction.setDate(ZonedDateTime.now());
         transaction.setProduct(product);
-        transactionService.create(transaction);
-
         return transaction;
     }
 

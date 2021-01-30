@@ -68,7 +68,33 @@ public class TransactionServiceImpl implements TransactionService {
                 .product(product)
                 .build();
 
-        return transactionProcessorFactory.getTransaction(PURCHASE)
-                .apply(transactionProcessorDto);
+        return create(transactionProcessorFactory.getTransaction(PURCHASE)
+                .apply(transactionProcessorDto));
+    }
+
+    @Transactional
+    @Override
+    public Account deposit(Transaction transaction) {
+        return addTransaction(transaction);
+    }
+
+    @Transactional
+    @Override
+    public Account withdraw(Transaction transaction) {
+        return addTransaction(transaction);
+    }
+
+    protected Account addTransaction(Transaction transaction) {
+        Account account = accountService.findById(transaction.getAccount().getId())
+                .orElseThrow(AccountNotFountException::new);
+
+        TransactionProcessorDto transactionProcessorDto = TransactionProcessorDto.builder()
+                .account(account)
+                .amount(transaction.getAmount())
+                .build();
+
+        return transactionProcessorFactory.getTransaction(transaction.getType())
+                .apply(transactionProcessorDto)
+                .getAccount();
     }
 }

@@ -67,7 +67,7 @@ public class AccountControllerImpl implements AccountController {
                 .date(ZonedDateTime.now())
                 .type(TransactionType.DEPOSIT)
                 .build();
-        return modelMapper.map(accountService.deposit(transaction), AccountResponse.class);
+        return modelMapper.map(transactionService.deposit(transaction), AccountResponse.class);
     }
 
     public AccountResponse withdraw(AccountWithdrawRequest request) {
@@ -80,7 +80,7 @@ public class AccountControllerImpl implements AccountController {
                 .date(ZonedDateTime.now())
                 .type(TransactionType.WITHDRAW)
                 .build();
-        return modelMapper.map(accountService.withdraw(transaction), AccountResponse.class);
+        return modelMapper.map(transactionService.withdraw(transaction), AccountResponse.class);
     }
 
     public TransactionsResponse findAllTransactions(AccountRequest request) {

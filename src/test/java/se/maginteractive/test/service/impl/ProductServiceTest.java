@@ -1,5 +1,6 @@
 package se.maginteractive.test.service.impl;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -32,6 +33,13 @@ class ProductServiceTest {
     @InjectMocks
     private ProductServiceImpl service;
 
+    private Product product;
+
+    @BeforeEach
+    void setUp() {
+        product = Product.builder().id(1L).price(ZERO).build();
+    }
+
     @DisplayName("Product Find All")
     @Test
     void findAll() {
@@ -50,7 +58,6 @@ class ProductServiceTest {
     @Test
     void findById() {
         //given
-        Product product = Product.builder().id(1L).price(ZERO).build();
         given(productRepository.findById(anyLong())).willReturn(Optional.of(product));
 
         //when
@@ -94,7 +101,6 @@ class ProductServiceTest {
     @Test
     void update() {
         //given
-        Product product = new Product();
         given(productRepository.findById(anyLong())).willReturn(Optional.of(product));
         given(productRepository.save(any(Product.class))).willReturn(product);
 
@@ -110,7 +116,6 @@ class ProductServiceTest {
     @Test
     void update_not_found() {
         //given
-        Product product = new Product();
         given(productRepository.findById(anyLong())).willReturn(Optional.empty());
 
         //when //then
@@ -123,7 +128,6 @@ class ProductServiceTest {
     @Test
     void delete() {
         //given
-        Product product = new Product();
         given(productRepository.findById(anyLong())).willReturn(Optional.of(product));
 
         //when

@@ -30,12 +30,12 @@ public class StoreControllerImpl implements StoreController {
 
     @GetMapping("/store/list")
     public ProductsResponse findProducts() {
-        List<ProductDto> productDtos = productService.findAll()
+        List<ProductDto> products = productService.findAll()
                 .stream()
                 .map(product -> modelMapper.map(product, ProductDto.class))
                 .collect(Collectors.toList());
 
-        return ProductsResponse.builder().products(productDtos).build();
+        return ProductsResponse.builder().products(products).build();
     }
 
     @PostMapping("/store/buy")

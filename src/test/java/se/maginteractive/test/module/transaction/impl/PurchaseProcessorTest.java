@@ -5,7 +5,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
-import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import se.maginteractive.test.exception.InsufficientBalanceException;
 import se.maginteractive.test.exception.InsufficientStockException;
@@ -13,7 +12,6 @@ import se.maginteractive.test.model.Account;
 import se.maginteractive.test.model.Product;
 import se.maginteractive.test.model.Transaction;
 import se.maginteractive.test.payload.TransactionProcessorDto;
-import se.maginteractive.test.service.TransactionService;
 
 import java.math.BigDecimal;
 
@@ -26,9 +24,6 @@ import static se.maginteractive.test.enums.TransactionType.PURCHASE;
 @DisplayName("Purchase Processor Test")
 @ExtendWith(MockitoExtension.class)
 class PurchaseProcessorTest {
-
-    @Mock
-    private TransactionService transactionService;
 
     @InjectMocks
     private PurchaseProcessor service;
@@ -68,7 +63,7 @@ class PurchaseProcessorTest {
         //given
         product.setCount(0);
 
-        //when
+        //when//then
         assertThrows(
                 InsufficientStockException.class,
                 () -> service.apply(transactionProcessorDto));
@@ -79,7 +74,8 @@ class PurchaseProcessorTest {
     void purchase_insufficient_balance_exception() {
         //given
         account.setBalance(ONE);
-        //when
+
+        //when//then
         assertThrows(
                 InsufficientBalanceException.class,
                 () -> service.apply(transactionProcessorDto));

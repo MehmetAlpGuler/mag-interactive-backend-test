@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import se.maginteractive.test.model.Product;
 import se.maginteractive.test.payload.ProductDto;
@@ -23,6 +24,7 @@ import java.util.stream.Collectors;
 @Slf4j
 @Controller
 @RequiredArgsConstructor
+@RequestMapping("/api/v1")
 public class ProductControllerImpl implements ProductController {
 
     private final ProductService productService;
@@ -50,7 +52,7 @@ public class ProductControllerImpl implements ProductController {
 
         //return getURI that created record
         URI location = ServletUriComponentsBuilder
-                .fromCurrentContextPath().path("/product/{id}")
+                .fromCurrentContextPath().path("/api/v1/product/{id}")
                 .buildAndExpand(product.getId())
                 .toUri();
 
@@ -65,7 +67,7 @@ public class ProductControllerImpl implements ProductController {
 
         //return getURI that created record
         URI location = ServletUriComponentsBuilder
-                .fromCurrentContextPath().path("/product/{id}")
+                .fromCurrentContextPath().path("/api/v1/product/{id}")
                 .buildAndExpand(product.getId())
                 .toUri();
 

@@ -62,7 +62,7 @@ class AccountControllerTest {
         given(accountService.findById(1L)).willReturn(Optional.of(new Account()));
 
         //when
-        mockMvc.perform(get("/account/{id}", 1L))
+        mockMvc.perform(get("/api/v1/accounts/{id}", 1L))
                 .andExpect(status().isOk());
 
         //then
@@ -75,7 +75,7 @@ class AccountControllerTest {
         given(accountService.create()).willReturn(new Account());
 
         //when
-        mockMvc.perform(post("/account/create"))
+        mockMvc.perform(post("/api/v1/accounts"))
                 .andExpect(status().isCreated());
 
         //then
@@ -85,12 +85,16 @@ class AccountControllerTest {
     @Test
     void deposit() throws Exception {
         //given
-        AccountDepositRequest accountDepositRequest = AccountDepositRequest.builder().accountId(1L).amount(BigDecimal.valueOf(100L)).build();
+        AccountDepositRequest accountDepositRequest = AccountDepositRequest.builder()
+                .accountId(1L)
+                .amount(BigDecimal.valueOf(100L))
+                .build();
+
         given(accountService.findById(anyLong())).willReturn(Optional.of(new Account()));
         given(transactionService.deposit(any())).willReturn(new Account());
 
         //when
-        mockMvc.perform(post("/account/deposit")
+        mockMvc.perform(post("/api/v1/accounts/{id}/deposit", anyLong())
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(om.writeValueAsString(accountDepositRequest)))
                 .andExpect(status().isOk());
@@ -102,12 +106,17 @@ class AccountControllerTest {
     @Test
     void withdraw() throws Exception {
         //given
-        AccountWithdrawRequest accountWithdrawRequest = AccountWithdrawRequest.builder().accountId(1L).amount(BigDecimal.valueOf(100L)).build();
+        AccountWithdrawRequest accountWithdrawRequest = AccountWithdrawRequest.builder()
+                .accountId(1L)
+                .amount(BigDecimal.valueOf(100L))
+                .build();
+
+
         given(accountService.findById(anyLong())).willReturn(Optional.of(new Account()));
         given(transactionService.withdraw(any())).willReturn(new Account());
 
         //when
-        mockMvc.perform(post("/account/withdraw")
+        mockMvc.perform(post("/api/v1/accounts/{id}/withdraw", anyLong())
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(om.writeValueAsString(accountWithdrawRequest)))
                 .andExpect(status().isOk());
@@ -123,7 +132,7 @@ class AccountControllerTest {
         given(transactionService.findByAccountId(anyLong())).willReturn(List.of(new Transaction()));
 
         //when
-        mockMvc.perform(post("/account/listTransactions")
+        mockMvc.perform(post("/api/v1/accounts/{id}/transactions", anyLong())
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(om.writeValueAsString(accountRequest)))
                 .andExpect(status().isOk());

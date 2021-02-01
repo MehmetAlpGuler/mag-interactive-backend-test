@@ -1,7 +1,6 @@
 package se.maginteractive.test.module.transaction.impl;
 
 import org.springframework.stereotype.Component;
-import org.springframework.transaction.annotation.Transactional;
 import se.maginteractive.test.enums.TransactionType;
 import se.maginteractive.test.model.Account;
 import se.maginteractive.test.model.Transaction;
@@ -15,7 +14,6 @@ import static se.maginteractive.test.enums.TransactionType.DEPOSIT;
 @Component
 public class DepositProcessor implements TransactionProcessor {
 
-    @Transactional
     @Override
     public Transaction apply(TransactionProcessorDto transactionProcessorDto) {
         validate(transactionProcessorDto);

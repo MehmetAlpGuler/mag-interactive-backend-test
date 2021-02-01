@@ -6,6 +6,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import se.maginteractive.test.model.Transaction;
 import se.maginteractive.test.payload.ProductDto;
 import se.maginteractive.test.payload.TransactionDto;
@@ -22,6 +23,7 @@ import java.util.stream.Collectors;
 @Slf4j
 @Controller
 @RequiredArgsConstructor
+@RequestMapping("/api/v1")
 public class StoreControllerImpl implements StoreController {
 
     private final TransactionService transactionService;

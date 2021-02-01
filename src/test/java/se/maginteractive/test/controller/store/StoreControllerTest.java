@@ -65,7 +65,7 @@ class StoreControllerTest {
         given(productService.findAll()).willReturn(products);
 
         //when
-        mockMvc.perform(get("/store/list"))
+        mockMvc.perform(get("/api/v1/store/list"))
                 .andExpect(status().isOk());
 
         //then
@@ -80,8 +80,7 @@ class StoreControllerTest {
         given(transactionService.buyProductByAccountIdAndProductId(1L, 1L)).willReturn(new Transaction());
 
         //when
-        //when
-        mockMvc.perform(post("/store/buy")
+        mockMvc.perform(post("/api/v1/store/buy")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(om.writeValueAsString(purchaseRequest)))
                 .andExpect(status().isOk());

@@ -86,7 +86,6 @@ class ProductServiceTest {
     @Test
     void create() {
         //given
-        Product product = new Product();
         given(productRepository.save(any(Product.class))).willReturn(product);
 
         //when

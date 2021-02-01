@@ -20,6 +20,14 @@ With this application is started with **./gradlew bootRun**
 ### Rest Standards
 
 I take care of Richardson Maturity Model of Level-3 HyperMedia Controls. 
+
+###### POST 201 (CREATED)
+
+###### PUT, 200 (OK), 201(CREATED),  or 204 (NO_CONTEXT)
+
+###### DELETE 200 (OK), or 204 (NO_CONTEXT), If in the que 202 (Accepted)
+
+
 * Return Http codes.
     * 200 OK
     * 201 CREATED

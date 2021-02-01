@@ -36,7 +36,7 @@ import static se.maginteractive.test.enums.TransactionType.PURCHASE;
 import static se.maginteractive.test.enums.TransactionType.WITHDRAW;
 
 @ExtendWith(MockitoExtension.class)
-class TransactionProcessorServiceTest {
+class TransactionServiceTest {
 
     @Mock
     private TransactionRepository transactionRepository;
@@ -159,6 +159,10 @@ class TransactionProcessorServiceTest {
 
         //then
         then(accountService).should().findById(anyLong());
+        then(productService).should().findById(anyLong());
+        then(transactionProcessorFactory).should().getTransaction(any());
+        then(withdrawProcessorBean).should().apply(any());
+        then(transactionRepository).should().save(any());
         assertThat(savedTransaction).isNotNull();
         assertThat(savedTransaction.getAmount()).isEqualByComparingTo(BigDecimal.valueOf(200));
         assertThat(savedTransaction.getAccount().getBalance()).isEqualByComparingTo(BigDecimal.valueOf(800));
@@ -196,6 +200,7 @@ class TransactionProcessorServiceTest {
 
         //then
         then(accountService).should().findById(anyLong());
+        then(productService).should().findById(anyLong());
     }
 
     @DisplayName("Deposit Success")
@@ -300,6 +305,8 @@ class TransactionProcessorServiceTest {
 
         //then
         then(accountService).should().findById(anyLong());
+        then(transactionProcessorFactory).should().getTransaction(any());
+        then(withdrawProcessorBean).should().apply(any());
         assertThat(savedAccount).isNotNull();
         assertThat(savedAccount.getBalance()).isEqualByComparingTo(BigDecimal.valueOf(900));
     }
@@ -323,6 +330,7 @@ class TransactionProcessorServiceTest {
                 () -> service.withdraw(transaction));
 
         //then
+        then(accountService).should().findById(anyLong());
         assertEquals("Account not found!", exception.getMessage());
     }
 
@@ -360,6 +368,8 @@ class TransactionProcessorServiceTest {
 
         //then
         then(accountService).should().findById(anyLong());
+        then(transactionProcessorFactory).should().getTransaction(any());
+        then(withdrawProcessorBean).should().apply(any());
         assertThat(savedAccount).isNotNull();
         assertThat(savedAccount.getBalance()).isEqualByComparingTo(BigDecimal.valueOf(900));
     }

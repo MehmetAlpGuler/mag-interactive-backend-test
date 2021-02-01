@@ -3,11 +3,13 @@ package se.maginteractive.test.service.impl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import se.maginteractive.test.exception.AccountNotFountException;
 import se.maginteractive.test.exception.ResourceNotFoundException;
 import se.maginteractive.test.model.Account;
 import se.maginteractive.test.repository.AccountRepository;
 import se.maginteractive.test.service.AccountService;
 
+import java.util.List;
 import java.util.Optional;
 
 import static java.math.BigDecimal.ZERO;
@@ -17,6 +19,12 @@ import static java.math.BigDecimal.ZERO;
 public class AccountServiceImpl implements AccountService {
 
     private final AccountRepository accountRepository;
+
+    @Transactional(readOnly = true)
+    @Override
+    public List<Account> findAll() {
+        return accountRepository.findAll();
+    }
 
     @Transactional(readOnly = true)
     @Override
@@ -38,5 +46,15 @@ public class AccountServiceImpl implements AccountService {
 
         account.setId(id);
         return accountRepository.save(account);
+    }
+
+    @Transactional
+    @Override
+    public Account deleteById(long id) {
+        Account account = accountRepository.findById(id)
+                .orElseThrow(AccountNotFountException::new);
+        accountRepository.deleteById(id);
+
+        return account;
     }
 }

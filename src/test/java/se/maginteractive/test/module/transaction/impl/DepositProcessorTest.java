@@ -5,13 +5,11 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
-import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import se.maginteractive.test.exception.SmallAmountException;
 import se.maginteractive.test.model.Account;
 import se.maginteractive.test.model.Transaction;
 import se.maginteractive.test.payload.TransactionProcessorDto;
-import se.maginteractive.test.service.TransactionService;
 
 import java.math.BigDecimal;
 
@@ -24,9 +22,6 @@ import static se.maginteractive.test.enums.TransactionType.DEPOSIT;
 @DisplayName("Deposit Processor Test")
 @ExtendWith(MockitoExtension.class)
 class DepositProcessorTest {
-
-    @Mock
-    private TransactionService transactionService;
 
     @InjectMocks
     private DepositProcessor service;

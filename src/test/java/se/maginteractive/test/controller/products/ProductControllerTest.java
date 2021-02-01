@@ -64,7 +64,7 @@ class ProductControllerTest {
         given(productService.findAll()).willReturn(products);
 
         //when
-        mockMvc.perform(get("/product/list"))
+        mockMvc.perform(get("/api/v1/product/list"))
                 .andExpect(status().isOk());
 
         //then
@@ -77,7 +77,7 @@ class ProductControllerTest {
         given(productService.findById(1L)).willReturn(Optional.of(new Product()));
 
         //when
-        mockMvc.perform(get("/product/{id}", 1L))
+        mockMvc.perform(get("/api/v1/product/{id}", 1L))
                 .andExpect(status().isOk());
 
         //then
@@ -93,16 +93,12 @@ class ProductControllerTest {
                 .price(BigDecimal.valueOf(100L))
                 .build();
 
-        ProductRequest productRequest = ProductRequest.builder()
-                .product(modelMapper.map(product, ProductDto.class))
-                .build();
-
         given(productService.create(any())).willReturn(product);
 
         //when
-        mockMvc.perform(post("/product/create")
+        mockMvc.perform(post("/api/v1/product/create")
                 .contentType(MediaType.APPLICATION_JSON)
-                .content(om.writeValueAsString(productRequest)))
+                .content(om.writeValueAsString(new ProductRequest())))
                 .andExpect(status().isCreated());
 
         //then
@@ -133,7 +129,7 @@ class ProductControllerTest {
         given(productService.update(anyLong(), any())).willReturn(product);
 
         //when
-        mockMvc.perform(post("/product/update")
+        mockMvc.perform(post("/api/v1/product/update")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(om.writeValueAsString(productRequest)))
                 .andExpect(status().isCreated());
@@ -145,19 +141,12 @@ class ProductControllerTest {
     @Test
     void delete() throws Exception {
         //given
-        Product product = Product.builder()
-                .id(1L)
-                .name("test")
-                .count(100)
-                .price(BigDecimal.valueOf(100L))
-                .build();
-
         ProductDeleteRequest productDeleteRequest = ProductDeleteRequest.builder().id(1L).build();
 
-        given(productService.deleteById(anyLong())).willReturn(product);
+        given(productService.deleteById(anyLong())).willReturn(new Product());
 
         //when
-        mockMvc.perform(post("/product/delete")
+        mockMvc.perform(post("/api/v1/product/delete")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(om.writeValueAsString(productDeleteRequest)))
                 .andExpect(status().isOk());

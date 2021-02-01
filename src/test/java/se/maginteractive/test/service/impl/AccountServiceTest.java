@@ -8,8 +8,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import se.maginteractive.test.model.Account;
-import se.maginteractive.test.module.transaction.TransactionProcessorFactory;
-import se.maginteractive.test.module.transaction.impl.WithdrawProcessor;
 import se.maginteractive.test.repository.AccountRepository;
 
 import java.util.Optional;
@@ -27,12 +25,6 @@ class AccountServiceTest {
 
     @Mock
     private AccountRepository accountRepository;
-
-    @Mock
-    private TransactionProcessorFactory transactionProcessorFactory;
-
-    @Mock
-    private WithdrawProcessor withdrawProcessorBean;
 
     @InjectMocks
     private AccountServiceImpl service;

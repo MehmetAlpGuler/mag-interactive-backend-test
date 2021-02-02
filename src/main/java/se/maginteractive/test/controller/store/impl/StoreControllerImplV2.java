@@ -22,20 +22,15 @@ import java.util.List;
 @RequestMapping("/api/v2")
 public class StoreControllerImplV2 implements StoreController {
 
-    public ProductsResponse findProducts() {
-        ProductDto product = ProductDto.builder()
-                .id(5L)
-                .name("Rubber Duck")
-                .count(200)
-                .price(BigDecimal.valueOf(300L))
-                .build();
 
-        return ProductsResponse.builder()
-                .products(List.of(product))
-                .build();
+    @Override
+    public ProductsResponse findProducts(Integer pageNo, Integer pageSize, String sortBy) {
+        return null;
     }
 
+    @Override
     public TransactionResponse buy(PurchaseRequest request) {
         return null;
     }
+
 }

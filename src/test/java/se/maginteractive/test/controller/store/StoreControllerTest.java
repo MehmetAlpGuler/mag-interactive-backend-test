@@ -21,6 +21,7 @@ import se.maginteractive.test.service.TransactionService;
 import java.math.BigDecimal;
 import java.util.List;
 
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.BDDMockito.then;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -62,14 +63,14 @@ class StoreControllerTest {
                 .price(BigDecimal.valueOf(100L))
                 .build());
 
-        given(productService.findAll()).willReturn(products);
+        given(productService.findAll(any(), any(), any())).willReturn(products);
 
         //when
         mockMvc.perform(get("/api/v1/store/list"))
                 .andExpect(status().isOk());
 
         //then
-        then(productService).should().findAll();
+        then(productService).should().findAll(any(), any(), any());
     }
 
     @Test

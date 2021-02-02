@@ -31,8 +31,11 @@ public class StoreControllerImpl implements StoreController {
     private final ModelMapper modelMapper;
 
     @GetMapping("/store/list")
-    public ProductsResponse findProducts() {
-        List<ProductDto> products = productService.findAll()
+    public ProductsResponse findProducts(Integer pageNo,
+                                    Integer pageSize,
+                                    String sortBy) {
+
+        List<ProductDto> products = productService.findAll(pageNo, pageSize, sortBy)
                 .stream()
                 .map(product -> modelMapper.map(product, ProductDto.class))
                 .collect(Collectors.toList());

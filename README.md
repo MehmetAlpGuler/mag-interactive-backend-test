@@ -95,6 +95,14 @@ I take care of Richardson Maturity Model of Level-3 HyperMedia Controls.
 
 Can find some examples in **Unsuccessful Endpoint calls** part 
 
+* Allow  sorting, and pagination
+
+      localhost:8080/api/v1/product/list
+  
+      localhost:8080/api/v1/product/list?pageSize=3&pageNo=1
+
+      localhost:8080/api/v1/product/list?pageSize=3&pageNo=0&sortBy=name
+
 ______
 
 # Project Endpoints
@@ -114,6 +122,8 @@ ______
 ### Successful Endpoint calls
 
 Also has **POSTMAN** script in the project folder.
+
+all endpoints have **/api/v1** prefix
 
 ##### @POST /account/create
 
@@ -195,6 +205,8 @@ Also has **POSTMAN** script in the project folder.
     }
 
 ##### @POST /product/list
+###### ProductList allow pagination and sort
+###### Default Page request [number: 0, size 1000, sort: id: ASC]
 
     Body: NONE
     Response:
@@ -208,6 +220,36 @@ Also has **POSTMAN** script in the project folder.
             }
         ]
     }
+
+###### /product/list?pageSize=10
+###### /product/list?pageSize=3&pageNo=0
+###### /product/list?pageSize=3&pageNo=0&sortBy=name  (below response belong this url)
+
+
+    Body: NONE
+    Response:
+    {
+    "products": [
+        {
+            "id": 3,
+            "name": "Apple",
+            "price": 250.00,
+            "count": 200
+        },
+        {
+            "id": 1,
+            "name": "Rubber Duck",
+            "price": 250.00,
+            "count": 200
+        },
+        {
+            "id": 2,
+            "name": "Test1",
+            "price": 250.00,
+            "count": 200
+        }
+    ]
+}
 
 ##### @POST /product/update
 

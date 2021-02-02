@@ -7,6 +7,9 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.Pageable;
 import se.maginteractive.test.exception.ResourceNotFoundException;
 import se.maginteractive.test.model.Product;
 import se.maginteractive.test.repository.ProductRepository;
@@ -37,20 +40,21 @@ class ProductServiceTest {
 
     @BeforeEach
     void setUp() {
-        product = Product.builder().id(1L).price(ZERO).build();
+        product = Product.builder().id(1L).name("Rubber Duck").price(ZERO).build();
     }
 
     @DisplayName("Product Find All")
     @Test
     void findAll() {
         //given
-        given(productRepository.findAll()).willReturn(List.of(new Product()));
+        Page<Product> pagedResult = new PageImpl(List.of(product));
+        given(productRepository.findAll(any(Pageable.class))).willReturn(pagedResult);
 
         //when
-        List<Product> foundProducts = service.findAll();
+        List<Product> foundProducts = service.findAll(0, 100, "id");
 
         //then
-        then(productRepository).should().findAll();
+        then(productRepository).should().findAll(any(Pageable.class));
         assertThat(foundProducts).hasSize(1);
     }
 

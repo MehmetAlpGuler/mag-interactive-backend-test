@@ -61,14 +61,14 @@ class ProductControllerTest {
                 .price(BigDecimal.valueOf(100L))
                 .build());
 
-        given(productService.findAll()).willReturn(products);
+        given(productService.findAll(any(), any(), any())).willReturn(products);
 
         //when
         mockMvc.perform(get("/api/v1/product/list"))
                 .andExpect(status().isOk());
 
         //then
-        then(productService).should().findAll();
+        then(productService).should().findAll(any(), any(), any());
     }
 
     @Test

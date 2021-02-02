@@ -7,7 +7,7 @@ import java.util.Optional;
 
 public interface ProductService {
 
-    List<Product> findAll();
+    List<Product> findAll(Integer pageNo, Integer pageSize, String sortBy);
 
     Optional<Product> findById(long id);
 

@@ -7,14 +7,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+import se.maginteractive.test.controller.products.ProductController;
+import se.maginteractive.test.exception.ResourceNotFoundException;
 import se.maginteractive.test.model.Product;
 import se.maginteractive.test.payload.ProductDto;
 import se.maginteractive.test.payload.request.ProductDeleteRequest;
 import se.maginteractive.test.payload.request.ProductRequest;
 import se.maginteractive.test.payload.response.ProductResponse;
 import se.maginteractive.test.payload.response.ProductsResponse;
-import se.maginteractive.test.controller.products.ProductController;
-import se.maginteractive.test.exception.ResourceNotFoundException;
 import se.maginteractive.test.service.ProductService;
 
 import java.net.URI;
@@ -30,8 +30,11 @@ public class ProductControllerImpl implements ProductController {
     private final ProductService productService;
     private final ModelMapper modelMapper;
 
-    public ProductsResponse findAll() {
-        List<ProductDto> products = productService.findAll()
+    public ProductsResponse findAll(Integer pageNo,
+                                    Integer pageSize,
+                                    String sortBy) {
+
+        List<ProductDto> products = productService.findAll(pageNo, pageSize, sortBy)
                 .stream()
                 .map(product -> modelMapper.map(product, ProductDto.class))
                 .collect(Collectors.toList());

@@ -1,5 +1,4 @@
 
-## MAG Code Assignment
 #### introduction
 
 * How to run

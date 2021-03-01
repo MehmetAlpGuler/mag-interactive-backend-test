@@ -4,13 +4,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import se.maginteractive.test.controller.store.StoreController;
-import se.maginteractive.test.payload.ProductDto;
 import se.maginteractive.test.payload.request.PurchaseRequest;
 import se.maginteractive.test.payload.response.ProductsResponse;
 import se.maginteractive.test.payload.response.TransactionResponse;
-
-import java.math.BigDecimal;
-import java.util.List;
 
 // This class is useless, just I created for different version
 // It can call like below
@@ -32,5 +28,4 @@ public class StoreControllerImplV2 implements StoreController {
     public TransactionResponse buy(PurchaseRequest request) {
         return null;
     }
-
 }

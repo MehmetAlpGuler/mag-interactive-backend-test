@@ -12,6 +12,8 @@ import se.maginteractive.test.payload.request.ProductRequest;
 import se.maginteractive.test.payload.response.ProductResponse;
 import se.maginteractive.test.payload.response.ProductsResponse;
 
+import javax.validation.Valid;
+
 @RestController
 public interface ProductController {
 
@@ -24,11 +26,11 @@ public interface ProductController {
     ProductResponse findById(@PathVariable(value = "id") Long id);
 
     @PostMapping("/product/create")
-    ResponseEntity<ProductResponse> create(@RequestBody ProductRequest request);
+    ResponseEntity<ProductResponse> create(@Valid @RequestBody ProductRequest request);
 
     @PostMapping("/product/update")
-    ResponseEntity<ProductResponse> update(@RequestBody ProductRequest request);
+    ResponseEntity<ProductResponse> update(@Valid @RequestBody ProductRequest request);
 
     @PostMapping("/product/delete")
-    ProductResponse delete(@RequestBody ProductDeleteRequest request);
+    ProductResponse delete(@Valid @RequestBody ProductDeleteRequest request);
 }

@@ -36,10 +36,10 @@ public interface AccountController  {
     void delete(@PathVariable(value = "id") Long id);
 
     @PostMapping("/accounts/{id}/deposit")
-    AccountResponse deposit(@NonNull @PathVariable(value = "id") Long id, @RequestBody AccountDepositRequest request);
+    AccountResponse deposit(@NonNull @PathVariable(value = "id") Long id, @Valid @RequestBody AccountDepositRequest request);
 
     @PostMapping("/accounts/{id}/withdraw")
-    AccountResponse withdraw(@NonNull @PathVariable(value = "id") Long id, @RequestBody AccountDepositRequest request);
+    AccountResponse withdraw(@NonNull @PathVariable(value = "id") Long id, @Valid @RequestBody AccountDepositRequest request);
 
     @PostMapping("/accounts/{id}/transactions")
     TransactionsResponse findAllTransactions(@NonNull @PathVariable(value = "id") Long id);

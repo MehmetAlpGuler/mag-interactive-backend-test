@@ -9,6 +9,8 @@ import se.maginteractive.test.payload.request.PurchaseRequest;
 import se.maginteractive.test.payload.response.ProductsResponse;
 import se.maginteractive.test.payload.response.TransactionResponse;
 
+import javax.validation.Valid;
+
 @RestController
 public interface StoreController {
 
@@ -18,5 +20,5 @@ public interface StoreController {
                                   @RequestParam(defaultValue = "id") String sortBy);
 
     @PostMapping("/store/buy")
-    TransactionResponse buy(@RequestBody PurchaseRequest request);
+    TransactionResponse buy(@Valid @RequestBody PurchaseRequest request);
 }

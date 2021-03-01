@@ -15,7 +15,7 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @Getter
 @Setter
-public class AccountDepositRequest extends TransactionRequest{
+public class AccountDepositRequest {
 
     private Long accountId;
 

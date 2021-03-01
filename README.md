@@ -1,5 +1,4 @@
 
-## MAG Code Assignment
 #### introduction
 
 * How to run
@@ -436,9 +435,21 @@ Also, I should complete exceptions class tests.
  
  * I added a small log mechanism. It is not enough the logback file can be added. So We can log all requests and responses.
  * The Spring security can be added.  I didn't add to avoid the complexity.
+ * I could use a global custom error handler.With ControllerAdvice
+   https://codeburst.io/spring-boot-rest-microservices-best-practices-2a6e50797115
+	https://www.toptal.com/java/spring-boot-rest-api-error-handling
+ *Logging.I could add logback or like that configuration. 
+   And I can return the trace id to the consumer. 
+   So I can find errors easily with kibana, or like those tools.
+ *Security  (JWT and spring security apply)
+ *Cache data to improve performance
+   https://www.baeldung.com/spring-cache-tutorial
+   https://www.youtube.com/watch?v=ccfQ1j4suN0
+ *I would use database migration tools. Like a Liquibase or Flyway. Also, It can be beneficial for backup scenarios.
+ *Can use API documentation tools like a swagger or springdoc-openapi.
+ *We can containerize it.
+ *Monitoring and availability  spring-boot-actuator
  * ... 
-
-I look forward to completing the shortcomings of the project together.
 
 
 
